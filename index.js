@@ -1,7 +1,15 @@
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 
-    const input = document.querySelector('input');
+    //Setting variable for the user's original input
+    const input = document.querySelector
+    ('#message-input');
 
-    console.log(input.value);
+    //Input for the Base64 Conversion function
+    const encrypted = btoa(input.value)
+
+    //Setting the shareable link equal to the message link after conversion
+    document.querySelector('#link-input').value = encrypted
+
+    
 })
