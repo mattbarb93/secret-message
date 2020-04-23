@@ -1,33 +1,30 @@
+const {hash} = window.location;
+
+//Display the message by running the A to B function, instead of B to A. The coded message can be found on the new URL, and can be selected by looking inside the "hash" property of the  window.location object. Replacing the # with an empty string will display all we need.
+console.log(atob(hash.replace('#', ' ')));
+
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 
+    
 
-    /* If the user clicks to create the URL, we'll hide the original message form, and only display the New URL form */
+    
+
+
     document.querySelector('#message-form').classList.add('hide');
     document.querySelector('#link-form').classList.remove('hide');
 
-    //Setting variable for the user's original input
     const input = document.querySelector
         ('#message-input');
 
-    //Input for the Base64 Conversion function
+    
     const encrypted = btoa(input.value)
 
-    //Setting the shareable link equal to the message link after conversion
-
-    /*Now, we'll update the code to generate the new URL. 
-    
-    Window.location allows us to get the current URL of the user (by putting it under `${window.location}`)
-    
-    Call that, and the encrypted message
-
-    */
 
     const linkInput = document.querySelector('#link-input');
     
     linkInput.value = `${window.location}#${encrypted}`;
 
-    //new URL is instantly selected, so the user can just copy
     linkInput.select();
 
 
