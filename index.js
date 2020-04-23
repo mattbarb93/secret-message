@@ -1,6 +1,11 @@
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 
+
+    /* If the user clicks to create the URL, we'll hide the original message form, and only display the New URL form */
+    document.querySelector('#message-form').classList.add('hide');
+    document.querySelector('#link-form').classList.remove('hide');
+
     //Setting variable for the user's original input
     const input = document.querySelector
         ('#message-input');

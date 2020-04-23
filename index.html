@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Quick styling just to push the whole thing down-->
+    <style>
+    .row{
+        margin-top: 25vh;
+    }
+    </style>
     <title>Document</title>
 </head>
 <body>
     <div class="row">
         <div class="col s8 offset-s2">
-            <div class="card-panel">
+            <!-- Creating new ID for the message form, so we can select it easily-->
+            <div class="card-panel" id="message-form">
                 <form>
                     <label>Enter a secret message</label>
-                    <!-- Creating id on different inputs-->
                     <input id="message-input"/>
                     <button class="btn">Create</button>
                 </form>
             </div>
 
-            <!-- New class so user can share the new encoded message-->
-            <div>
+             <!-- Creating new ID for the message form, so we can select it easily-->
+            <div class="card-panel hide" id="link-form">
                 Share this link with a friend
                 <input id="link-input" />
             </div>
