@@ -1,7 +1,16 @@
 const {hash} = window.location;
 
-//Display the message by running the A to B function, instead of B to A. The coded message can be found on the new URL, and can be selected by looking inside the "hash" property of the  window.location object. Replacing the # with an empty string will display all we need.
-console.log(atob(hash.replace('#', ' ')));
+//Set the message variable to the logic used to decode the secret message
+const message = atob(hash.replace('#', ' '));
+
+
+//If there is a message to be decoded, display the decoded secret message, and hide the form to create one
+if(message){
+    document.querySelector('#message-form').classList.add('hide');
+    document.querySelector('#message-show').classList.remove('hide');
+
+    document.querySelector('h1').innerHTML = message
+}
 
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
